@@ -7,7 +7,7 @@ void usage() {
   std::cout << "USAGE: caesar [-ed] [key]\n";
 }
 
-string encryption(const string& sentence, int shift){
+string encryption(string sentence, int shift){
   int sent_len = sentence.size();
   string enc_str = "";
   for (int i = 0; i < sent_len; i++){
@@ -38,7 +38,7 @@ string encryption(const string& sentence, int shift){
   return enc_str;
 }
 
-string decryption(const string& sentence, int shift){
+string decryption(string sentence, int shift){
   int sent_len = sentence.size();
   string dec_str = "";
   for(int i = 0; i < sent_len; i++){
