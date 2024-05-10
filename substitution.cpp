@@ -47,7 +47,7 @@ string decryption(string sentence, string new_alph){
     int num = tolower(letter) - 'a';
 
     if(num >= 0 && num < 26){
-      for(unsigned int j = 0; j < length; i++){
+      for(unsigned int j = 0; j < length; j++){
         if(letter == new_alph[j]){
             if(isupper(sentence[i])){
                 dec_str += toupper(reg_alph[j]);
