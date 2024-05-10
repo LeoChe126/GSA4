@@ -1,6 +1,7 @@
 #include <cctype>
 #include <iostream>
 #include <string>
+using namespace std;
 
 void usage() {
   std::cout << "USAGE: substitution [-ed] [key]\n";
