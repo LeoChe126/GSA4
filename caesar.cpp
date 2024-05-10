@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
   }
 
   else if(mode == "-d"){
-    std::string message;
+    string message;
     while(getline(std::cin, message)){
       cout << decryption(message, shift) << endl;
     }
