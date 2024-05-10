@@ -43,7 +43,7 @@ string decryption(string sentence, string new_alph){
   }
 
   for(unsigned int i = 0; i < sentence.size(); i++){
-    char letter = sentence[i];
+    char letter = tolower(sentence[i]);
     int num = tolower(letter) - 'a';
 
     if(num >= 0 && num < 26){
