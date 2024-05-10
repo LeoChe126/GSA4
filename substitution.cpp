@@ -36,7 +36,7 @@ string encryption(string sentence, string new_alph){
 string decryption(string sentence, string new_alph){
   string dec_str;
   string base;
-  string reg_alph = "abcdefghijklmnopqretuvwxyz";
+  string reg_alph = "abcdefghijklmnopqrstuvwxyz";
   unsigned int length = new_alph.length();
   for(unsigned int i = 0; i < length; i++){
     base += tolower(new_alph[i]);
