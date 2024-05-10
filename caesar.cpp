@@ -73,11 +73,17 @@ int main(int argc, char** argv) {
   getline(cin, sentence);
   
   if(mode == "-e"){
-    cout << encryption(sentence, shift) << endl;
+    string message;
+    while(std::getline(std::cin, message)){
+      cout << encryption(message, shift) << endl;
+    }
   }
 
   else if(mode == "-d"){
-    cout << decryption(sentence, shift) << endl;
+    std::string message;
+    while(std::getline(std::cin, message)){
+      cout << decryption(message, shift) << endl;
+    }
   }
 
   else{
