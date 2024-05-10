@@ -74,14 +74,14 @@ int main(int argc, char** argv) {
   
   if(mode == "-e"){
     string message;
-    while(std::getline(std::cin, message)){
+    while(getline(std::cin, message)){
       cout << encryption(message, shift) << endl;
     }
   }
 
   else if(mode == "-d"){
     std::string message;
-    while(std::getline(std::cin, message)){
+    while(getline(std::cin, message)){
       cout << decryption(message, shift) << endl;
     }
   }
