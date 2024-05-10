@@ -10,11 +10,12 @@ void usage() {
 string encryption(string sentence, string new_alph){
   string enc_str;
   string base;
-  for(int i = 0; i < new_alph.size(); i++){
+  unsigned int length = new_alph.length()
+  for(int i = 0; i < length; i++){
     base += tolower(new_alph[i]);
   }
 
-  for(int i = 0; i < sentence.size(); i++){
+  for(unsigned int i = 0; i < sentence.size(); i++){
     char letter = sentence[i];
     int num = tolower(letter) - 'a';
     if(num >= 0 && num < 26){
@@ -36,16 +37,17 @@ string decryption(string sentence, string new_alph){
   string dec_str;
   string base;
   string reg_alph = "abcdefghijklmnopqretuvwxyz";
-  for(int i = 0; i < new_alph.size(); i++){
+  unsigned int length = new_alph.length();
+  for(unsigned int i = 0; i < length; i++){
     base += tolower(new_alph[i]);
   }
 
-  for(int i = 0; i < sentence.size(); i++){
+  for(unsigned int i = 0; i < sentence.size(); i++){
     char letter = sentence[i];
     int num = tolower(letter) - 'a';
 
     if(num >= 0 && num < 26){
-      for(int j = 0; j < new_alph.size(); i++){
+      for(int j = 0; j < length; i++){
         if(letter == new_alph[j]){
             if(isupper(sentence[i])){
                 dec_str += toupper(reg_alph[j]);
