@@ -68,20 +68,17 @@ int main(int argc, char** argv) {
 
   mode = argv[1];
   shift = atoi(argv[2]);
-
-  string sentence;
-  getline(cin, sentence);
   
   if(mode == "-e"){
     string message;
-    while(getline(std::cin, message)){
+    while(getline(cin, message)){
       cout << encryption(message, shift) << endl;
     }
   }
 
   else if(mode == "-d"){
     string message;
-    while(getline(std::cin, message)){
+    while(getline(cin, message)){
       cout << decryption(message, shift) << endl;
     }
   }
