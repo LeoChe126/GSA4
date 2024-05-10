@@ -17,20 +17,28 @@ string encryption(string sentence, int shift){
     if(char_num >= 65 && char_num <= 90){ // capitals
       char_num += shift;
       if(char_num > 90){
-        char_num -= 26;
+        while(char_num > 90){
+            char_num -= 26;
+        }
       }
       if(char_num < 65){
-        char_num += 26;
+        while(char_num < 65){
+          char_num += 26;
+        }
       }
     }
 
     if(char_num >= 97 && char_num <= 122){ // lowers
       char_num += shift;
       if(char_num > 122){
-        char_num -= 26;
+        while(char_num > 122){
+          char_num -= 26;
+        }
       }
       if(char_num < 97){
-        char_num += 26;
+        while(char_num < 97){
+          char_num += 26;
+        }
       }
     }
     enc_str += static_cast<char>(char_num);
@@ -48,26 +56,35 @@ string decryption(string sentence, int shift){
     if(char_num >= 65 && char_num  <= 90){ // capitals
       char_num = char_num - shift;
       if(char_num < 65){
-        char_num += 26;
+        while(char_num < 65){
+          char_num += 26;
+        }
       }
-      if(char_num > 90){
-        char_num -= 26;
+      if(char_num >= 90){
+        while(char_num > 90){
+          char_num -= 26;
+        }
       }
     }
    
     if(char_num >= 97 && char_num <= 122){ // lowers
       char_num = char_num - shift;
       if (char_num < 97){
-        char_num += 26;
+        while(char_num < 97){
+          char_num += 26;
+        }
       }
       if(char_num > 122){
-        char_num -= 26;
+        while(char_num > 122){
+          char_num -= 26;
+        }
       }
     }
     dec_str += static_cast<char>(char_num);
   }
   return dec_str;
 }
+
 
 int main(int argc, char** argv) {
   if(argc != 3) {
@@ -79,7 +96,7 @@ int main(int argc, char** argv) {
 
   mode = argv[1];
   shift = atoi(argv[2]);
-  
+
   if(mode == "-e"){
     string message;
     while(getline(cin, message)){
@@ -96,6 +113,7 @@ int main(int argc, char** argv) {
 
   else{
     usage();
+    return 1;
   }
 
   return 0;
