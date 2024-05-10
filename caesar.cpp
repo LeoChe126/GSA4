@@ -19,12 +19,18 @@ string encryption(const string& sentence, int shift){
       if(char_num > 90){
         char_num -= 26;
       }
+      if(char_num < 65){
+        char_num += 26;
+      }
     }
 
     if(char_num >= 97 && char_num <= 122){ // lowers
       char_num += shift;
       if(char_num > 122){
         char_num -= 26;
+      }
+      if(char_num < 97){
+        char_num += 26;
       }
     }
     enc_str += static_cast<char>(char_num);
@@ -44,6 +50,9 @@ string decryption(const string& sentence, int shift){
       if(char_num < 65){
         char_num += 26;
       }
+      if(char_num > 90){
+        char_num -= 26;
+      }
     }
    
     if(char_num >= 97 && char_num <= 122){ // lowers
@@ -51,12 +60,14 @@ string decryption(const string& sentence, int shift){
       if (char_num < 97){
         char_num += 26;
       }
+      if(char_num > 122){
+        char_num -= 26;
+      }
     }
     dec_str += static_cast<char>(char_num);
   }
   return dec_str;
 }
-
 
 int main(int argc, char** argv) {
   if(argc != 3) {
