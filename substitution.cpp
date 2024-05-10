@@ -11,7 +11,7 @@ string encryption(string sentence, string new_alph){
   string enc_str;
   string base;
   unsigned int length = new_alph.length();
-  for(int i = 0; i < length; i++){
+  for(unsigned int i = 0; i < length; i++){
     base += tolower(new_alph[i]);
   }
 
